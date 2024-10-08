@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: roman-clock-tasks
+Version: 0.1.0
+Summary: A package for Roman numeral conversion, word reversal, and clock angle calculation
+Home-page: https://github.com/yourusername/roman_clock_tasks
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+
+This package provides three main functions:
+
+1. `roman_to_int`: Convert Roman numerals to integers
+2. `reverse_words`: Reverse each word in a string
+3. `calculate_clock_angle`: Calculate the angle between clock hands

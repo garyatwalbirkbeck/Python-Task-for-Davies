@@ -1,0 +1,11 @@
+README.md
+setup.py
+roman_clock_tasks/__init__.py
+roman_clock_tasks/clock_angle.py
+roman_clock_tasks/roman_converter.py
+roman_clock_tasks/word_reverser.py
+roman_clock_tasks.egg-info/PKG-INFO
+roman_clock_tasks.egg-info/SOURCES.txt
+roman_clock_tasks.egg-info/dependency_links.txt
+roman_clock_tasks.egg-info/top_level.txt
+tests/test_roman_clock_tasks.py
