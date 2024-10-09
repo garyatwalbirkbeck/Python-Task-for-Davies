@@ -26,7 +26,7 @@ def is_valid_roman_numeral(s: str) -> bool:
         if s.count(pair) > 1:
             return False
     
-    # Check overall descending order
+    # Check overall descending order and valid subtractive pairs
     values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     prev_value = float('inf')
     i = 0
