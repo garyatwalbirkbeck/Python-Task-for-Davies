@@ -18,12 +18,17 @@ def calculate_clock_angle(hours: int, minutes: int) -> float:
     # Convert 24-hour format to 12-hour format
     hours = hours % 12
     
-    # Calculate angles
-    hour_angle = (hours + minutes / 60) * 30  # 360 degrees / 12 hours = 30 degrees per hour
-    minute_angle = minutes * 6  # 360 degrees / 60 minutes = 6 degrees per minute
+    # Calculate the position of the hour hand
+    hour_angle = (hours * 30) + (minutes * 0.5)
+    # The hour hand moves 30 degrees per hour (360 / 12 = 30)
+    # It also moves 0.5 degrees per minute (30 / 60 = 0.5)
     
-    # Calculate the absolute difference
-    angle_diff = abs(hour_angle - minute_angle)
+    # Calculate the position of the minute hand
+    minute_angle = minutes * 6
+    # The minute hand moves 6 degrees per minute (360 / 60 = 6)
+    
+    # Calculate the angle between the hands
+    angle = abs(hour_angle - minute_angle)
     
     # Return the smaller angle
-    return min(angle_diff, 360 - angle_diff)
+    return min(angle, 360 - angle)
