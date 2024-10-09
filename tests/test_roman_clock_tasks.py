@@ -98,7 +98,7 @@ class TestClockAngle(unittest.TestCase):
             ((6, 0), 180),
             ((12, 0), 0),
             ((5, 30), 15),
-            ((9, 45), 142.5),
+            ((9, 45), 22.5),
         ]
         for (hours, minutes), expected in test_cases:
             with self.subTest(hours=hours, minutes=minutes):
