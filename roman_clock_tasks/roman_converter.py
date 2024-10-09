@@ -15,33 +15,13 @@ def is_valid_roman_numeral(s: str) -> bool:
         return False
     
     # Check for invalid repetitions
-    if re.search('V{2,}|L{2,}|D{2,}', s):
-        return False
-    if re.search('I{4,}|X{4,}|C{4,}|M{4,}', s):
+    if re.search('I{4,}|X{4,}|C{4,}|M{4,}|V{2,}|L{2,}|D{2,}', s):
         return False
     
-    # Check for valid subtractive pairs
-    valid_pairs = ['IV', 'IX', 'XL', 'XC', 'CD', 'CM']
-    for pair in valid_pairs:
-        if s.count(pair) > 1:
-            return False
+    # Define valid Roman numeral patterns
+    valid_pattern = '^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$'
     
-    # Check overall descending order and valid subtractive pairs
-    values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-    prev_value = float('inf')
-    i = 0
-    while i < len(s):
-        if i + 1 < len(s) and s[i:i+2] in valid_pairs:
-            current_value = values[s[i+1]] - values[s[i]]
-            i += 2
-        else:
-            current_value = values[s[i]]
-            i += 1
-        if current_value > prev_value:
-            return False
-        prev_value = current_value
-    
-    return True
+    return bool(re.match(valid_pattern, s))
 
 def roman_to_int(roman_numeral: str) -> int:
     """
