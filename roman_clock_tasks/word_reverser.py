@@ -13,6 +13,7 @@ def reverse_words(sentence: str) -> str:
     def reverse_word(word):
         # Reverse only alphanumeric characters
         alphanumeric = re.sub(r'\W+', '', word)
+        # Python string slicing syntax
         reversed_alphanumeric = alphanumeric[::-1]
         
         # Rebuild the word with original punctuation
