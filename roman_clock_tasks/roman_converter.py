@@ -11,6 +11,7 @@ def is_valid_roman_numeral(s: str) -> bool:
         bool: True if the input is a valid Roman numeral, False otherwise.
 
     To validate input, I would implement the following checks:
+
     1. Ensure the input string only contains valid Roman numeral symbols (I, V, X, L, C, D, M).
     2. Check that V, L, and D are not repeated.
     3. Ensure I, X, and C are not repeated more than three times in succession.
@@ -18,11 +19,11 @@ def is_valid_roman_numeral(s: str) -> bool:
     5. Check that the overall order of symbols is descending, except for valid subtractive pairs.
     
     """
-    # Check for valid characters
+    # Check for valid characters Check no 1
     if not re.match('^[IVXLCDM]+$', s):
         return False
     
-    # Check for invalid repetitions
+    # Check for invalid repetitions Check no 2 and 3
     if re.search('I{4,}|X{4,}|C{4,}|M{4,}|V{2,}|L{2,}|D{2,}', s):
         return False
     
