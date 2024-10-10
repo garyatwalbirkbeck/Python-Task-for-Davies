@@ -17,8 +17,13 @@ def reverse_words(sentence: str) -> str:
         reversed_alphanumeric = alphanumeric[::-1]
         
         # Rebuild the word with original punctuation
+        # Initialize an empty list to store the characters of the reversed word.
         result = []
+
+        # Initialize an index to keep track of our position in the `reversed_alphanumeric` string.
         alphanumeric_index = 0
+        
+        
         for char in word:
             if char.isalnum():
                 result.append(reversed_alphanumeric[alphanumeric_index])
