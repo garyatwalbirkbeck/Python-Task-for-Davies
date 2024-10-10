@@ -19,6 +19,15 @@ def is_valid_roman_numeral(s: str) -> bool:
         return False
     
     # Define valid Roman numeral patterns
+    """
+
+    M{0,3}: Up to three M's at the beginning
+    (CM|CD|D?C{0,3}): Either CM, CD, or up to three C's, optionally preceded by a D
+    (XC|XL|L?X{0,3}): Either XC, XL, or up to three X's, optionally preceded by an L
+    (IX|IV|V?I{0,3}): Either IX, IV, or up to three I's, optionally preceded by a V
+
+
+    """
     valid_pattern = '^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$'
     
     return bool(re.match(valid_pattern, s))
