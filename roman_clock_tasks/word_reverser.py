@@ -35,5 +35,5 @@ def reverse_words(sentence: str) -> str:
     # Split the sentence into words, preserving spacing
     words = re.split(r'(\s+)', sentence)
     
-    # Reverse each word and join them back together
+    # Reverse each word and join them back together using a generator expression
     return ''.join(reverse_word(word) for word in words)
